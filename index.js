@@ -4,13 +4,14 @@ import helmet from 'helmet'
 import pino from 'pino-http'
 import exphbs from 'express-handlebars'
 import fs from 'fs'
-import path from 'path'
+import cors from 'cors'
 import QRCode from 'qrcode'
 import BrCode from './lib/br_code.js';
 import HTMLParser from 'node-html-parser';
 
 const app = express();
 
+app.use(cors());
 app.use(helmet());
 app.use(pino());
 app.use(bodyParser.json());
