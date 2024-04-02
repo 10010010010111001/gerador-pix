@@ -53,6 +53,7 @@ app.get('/', function(req, res) {
 
 app.post('/emvqr-static', (req, res) => {
   var { key, amount, name, reference, key_type, city } = req.body
+  console.log({body: req.body})
 
   if (key) {
       var brCode = new BrCode(key, amount, name, reference, key_type, city);
